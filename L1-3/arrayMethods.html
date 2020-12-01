@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excercise - 4</title>
+</head>
+<body>
+    <h2>List of Subjects</h2>
+    <ol id="subjects">
+
+    </ol>
+    <script type="text/javascript">
+        var subjects= [
+            "Maths",
+            "Biology",
+            "History",
+            "Geography",
+            "Chemistry",
+            "Physics",
+            "Computer Science"
+        ];
+
+        var marks= [
+            80,
+            50,
+            65,
+            45,
+            89,
+            52,
+            59
+        ];
+
+        subjects.shift();
+        subjects.unshift("ICT");
+        subjects.push("CS");
+        subjects.pop();
+
+        var newArray = subjects.concat(marks);
+        subjects.splice(2, 2, 'FAAZ', "AMN");
+        var newArray2 = subjects.slice(0,3);
+        subjects.reverse();
+
+        document.writeln(subjects);
+    </script>
+</body>
+</html>

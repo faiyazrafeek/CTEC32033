@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Marks</title>
+</head>
+<body onload="sortMarks()">
+    <h3>Students Marks: Before Sort</h3>
+    <p id="beforeSort"> </p>
+    <br>
+
+    <h3>Students Marks: After Sort</h3>
+    <p id="afterSort">  </p>
+    <br>
+
+    <h3>Students Statistics</h3>
+    <p id="max">    </p>
+    <p id="min">    </p>
+    <p id="mid">    </p>    
+
+    <script type="text/javascript">
+        function sortMarks(){
+            var marks = [];
+            var i=0;
+            var size,max,min,mid;
+
+            //ask user to add the marks
+            for(i;i<7;i++){
+                var mark = prompt("Pleaer enter studet Mark"+ (i+1));
+                marks.push(mark);
+            }
+
+            //Display the entered number 
+            document.getElementById("beforeSort").innerHTML = marks;
+
+            marks.sort(function(a,b){return a-b});
+            
+            document.getElementById("afterSort").innerHTML = marks;
+
+            size = marks.length;
+
+            if (size%2 == 0){
+                mid = marks[(size/2) - 1];
+            }
+            else{
+                mid = marks[Math.floor(size/2)];
+            }
+            min = Math.min.apply(Math, marks);
+            max = Math.max.apply(Math, marks);          
+            
+            document.getElementById("max").innerHTML = "Max: " + max;
+            document.getElementById("min").innerHTML = "Min: " + min;
+            document.getElementById("mid").innerHTML = "Median: " + mid;
+            
+        }
+    </script>
+</body>
+</html>

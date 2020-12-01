@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excercise - 4</title>
+</head>
+<body>
+    <h2>List of Subjects</h2>
+    <ol id="subjects">
+
+    </ol>
+    <script type="text/javascript">
+        var subjects= [
+            "Maths",
+            "Biology",
+            "History",
+            "Geography",
+            "Chemistry",
+            "Physics",
+            "Computer Science"
+        ];
+        for (x in subjects){
+            var li = document.createElement("li");
+            var text = document.createTextNode(subjects[x]);
+            li.appendChild(text);
+            document.getElementById("subjects").appendChild(li)
+        }
+        document.writeln(subjects.join(","));
+    </script>
+</body>
+</html>
